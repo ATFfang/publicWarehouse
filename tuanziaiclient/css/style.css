@@ -1,0 +1,124 @@
+html, body {
+    height: 100%; /* 确保body和html充满整个视口 */
+    margin: 0; /* 去掉默认边距 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+/* 主容器，占据页面 80%，居中 */
+.container {
+    display: flex;
+    justify-content: space-between; /* 水平方向布局，terminal和map左右排列 */
+    align-items: center; /* 让map上下居中 */
+    width: 1200px; /* 容器占页面的80% */
+    height: 520px; /* 高度占据整个页面 */
+    margin: 0 auto; /* 容器水平居中 */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(51, 51, 51, 0.48); /* 背景透明度设置 */
+}
+
+/* 终端样式 */
+.terminal {
+    width: 400px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.85); /* 提高透明度 */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: white;
+    font-family: ".SFNSText", "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* 与map保持一定距离 */
+}
+
+/* MacOS 窗口按钮样式 */
+.macos-buttons {
+    top: 10px;
+    left: 10px;
+    display: flex;
+}
+
+.macos-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.close {
+    background-color: #ff5f57;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #28c840;
+}
+
+/* 终端内容输出区域 */
+.terminal-content {
+    margin-top: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 终端输入区域 */
+.terminal-input {
+    background-color: #000000;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+    border-top: 1px solid #44444495;
+}
+
+/* 打字效果 */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+.typewriter {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    width: 100%;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* 发光效果 */
+.glowing {
+    color: white;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* 地图样式，保持在容器内，居中 */
+.map {
+    flex-grow: 1;
+    height: 540px; /* 地图高度设置为容器的80% */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.85); /* 地图块的背景透明度 */
+}
